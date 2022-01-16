@@ -59,9 +59,9 @@ setreadonly(Raw,false)
 local NewIndex = Raw.__newindex;
 Raw.__newindex = Closure(function(self,Property,Value)
 	if Caller() then return NewIndex(self,Property,Value) end
-	if Property == "WalkSpeed" then return 
-	if Property == "JumpPower" then return 
-	if Property == "HipHeight" then return 
+	if Property == "WalkSpeed" then return 16 end
+	if Property == "JumpPower" then return 50 end 
+	if Property == "HipHeight" then return 0 end 
 	if self == workspace and Property == "Gravity" then return NormalGravity end
 	if Property == "CFrame" and self:IsDescendantOf(lp.Character) then return end 
 	return NewIndex(self,Property,Value)
